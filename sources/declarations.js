@@ -127,7 +127,7 @@ function clic(jeux)
                         {
                                 gagne += 1
                                 printGagne();
-                                reinit()
+                                reinit();
                         }
                         
                         if (jeux == "simple")

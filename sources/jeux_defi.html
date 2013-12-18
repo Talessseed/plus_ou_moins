@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
 	<title>Plus ou moins</title>
+	<body bgcolor="#D2F2C9">
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<html>
 	<head>
@@ -19,6 +20,8 @@
         <title>Plus ou moins</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<!-- en-tete du document -->
+	<center> <b> PLUS OU MOINS </b></center>
+	<br>
 	<script language="javascript" type="text/javascript">
 	var compte = 180;
 	
@@ -28,10 +31,17 @@
 		node.innerHTML ="Nombre de victoires: " + gagne;
 	}
 	
+	function clearFromulaire()
+	{
+		var node = document.getElementById("formulaire");
+		node.innerHTML = "";
+	}
+	
 	function decompte()
 	{
         if(compte <= 1)
 	{
+		clearFromulaire();
 		pluriel = "";
 		printBouton("Partir", "index.html", "bouton1");
                 printBouton("Rejouer", "jeux-defi.html", "bouton2");
@@ -76,10 +86,7 @@
 		}
 		Timer();
 		</script>
-		
-		L'ordinateur a choisi al&eacute;atoirement un chiffre
-		prs de la moyenne du nombre (marge de 20%) que vous devez deviner.
-		Attention ! Vous n'avez que 3 minutes !!!
+		<strong> Attention ! Vous n'avez que 3 minutes !!! </strong>
 		<br>Donnez votre proposition dans la barre de texte ci-
 		dessous.
 		
@@ -90,10 +97,12 @@
 		printQst();
 		</script>
 		
+		<div id="formulaire">
 		<form NAME="form1" onSubmit="clic('defi'); return false;">
 		<input TYPE="text" NAME="input" VALUE="">
 		<input type="button" name="bouton" value="OK" onClick=clic("defi")>
 		</form>
+		</div>
 		
 		<FORM>
 		<INPUT
