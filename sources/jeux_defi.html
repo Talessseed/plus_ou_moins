@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<title>Plus ou moins</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<!-- en-tete du document -->
+	<script language="javascript" type="text/javascript">
+	var compte = 180;
+	
+	function printGagne()
+	{
+		var node = document.getElementById("gagne");
+		node.innerHTML ="Nombre de victoires: " + gagne;
+	}
+	
+	function decompte()
+	{
+        if(compte <= 1)
+	{
+		pluriel = "";
+		printBouton("Partir", "index.html", "bouton1");
+                printBouton("Rejouer", "jeux-defi.html", "bouton2");
+        }
+	
+	else
+	{
+		pluriel = "s";
+        }
+	info_duree = compte + " seconde" + pluriel;
+	if (compte<61) { info_duree = '<span style="color:#F51D1D">'+info_duree+"</span>";}
+	document.getElementById("compt").innerHTML = info_duree;
+ 
+        if(compte == 0 || compte < 0)
+	{
+		//blur
+		compte = 0;
+		clearInterval(timer);
+        }
+ 
+		compte--;
+	}
+	var timer = setInterval('decompte()',1000);
+	</script>
+	<script type="text/javascript" src="declarations.js"></script>
+	<script type="text/javascript">
+	
+	var texte = "<br>";
+	var gagne = 0;
+	
+	</script>
+</head>
+	<body>
+		<!-- corps du document -->
+		<body onload="decompte();">
+		<script language=javascript>
+		function Timer()
+		{
+			var dt=new Date()
+			window.status=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+			setTimeout("Timer()",1000);
+		}
+		Timer();
+		</script>
+		
+		L'ordinateur a choisi al&eacute;atoirement un chiffre
+		prs de la moyenne du nombre (marge de 20%) que vous devez deviner.
+		Attention ! Vous n'avez que 3 minutes !!!
+		<br>Donnez votre proposition dans la barre de texte ci-
+		dessous.
+		
+		<div id="question"></div>
+		<div id="compt"></div>
+		<script type="text/javascript">
+		choixQst();
+		printQst();
+		</script>
+		
+		<br>
+		<form NAME="form1" onSubmit="clic('defi'); return false;">
+		<input TYPE="text" NAME="input" VALUE="">
+		<input type="button" name="bouton" value="OK" onClick=clic("defi")>
+		</form>
+		
+		<br>
+		<div id="chrono"></div>
+		<br>
+		<div id="texte"></div>
+		<div id="gagne"></div>
+		<div id="bouton1"></div>
+		<div id="bouton2"></div>
+		<div id="essais"></div>
+		<div id="hist"></div>
+		
+		
+		<script type="text/javascript">
+		init();
+		controle();
+		clic("defi");
+		</script>
+		
+		
+	</body>
+</html>

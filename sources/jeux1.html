@@ -1,17 +1,24 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-    <link href="css/screen.css" type="text/css" rel="stylesheet" />
-	
-	<script type="text/javascript" src="js/jquery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="jembe.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
 	<title>Plus ou moins</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="apple-mobile-web-app-capable" content="yes"
+	<span class="nt" style="color: navy;">/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link href="css/screen.css" type="text/css" rel="stylesheet" />
+        
+        <script type="text/javascript" src="js/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jembe.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+        <title>Plus ou moins</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <!-- en-tete du document -->
 	<!-- en-tete du document -->
 	<script type="text/javascript" src="declarations.js"></script>
 	<script type="text/javascript">
@@ -21,6 +28,7 @@
 </head>
 	<body>
 		<!-- corps du document -->
+		
 		L'ordinateur a choisi al&eacute;atoirement un chiffre
 		près de la moyenne du nombre (marge de 20%) que vous devez deviner.
 		<br>Donnez votre proposition dans la barre de texte ci-
@@ -31,17 +39,23 @@
 		printQst(); //print question
 		</script>
 		<br>
-		<FORM NAME="form1" onSubmit="clic('simple'); return false;">
-		<INPUT TYPE="text" NAME="input" VALUE="">
-		</FORM>
+		<form NAME="form1" onSubmit="clic('simple'); return false;">
+		<input TYPE="text" NAME="input" VALUE="">
+		<input type="button" name="bouton" value="OK" onClick=clic()>
+		</form>
 		<br>
 		<div id="texte"></div>
+		<div id="bouton1"></div>
+		<div id="bouton2"></div>
 		<div id="essais"></div>
 		<div id="hist"></div>
+		
 		<script type="text/javascript">
 		init();
 		controle();
 		clic("simple");
 		</script>
+		
+		
 	</body>
 </html>

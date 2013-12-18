@@ -59,7 +59,7 @@ function init()
 function printQst()
 { 
         var node = document.getElementById("question");
-        node.innerHTML = textequestions[tableau_utilise] + "<br>En " + unitequestions[tableau_utilise];
+        node.innerHTML = "<strong>"+textequestions[tableau_utilise]+"</strong>" + "<br>En " + unitequestions[tableau_utilise];
         random(limite_reponse[tableau_utilise])
         console.log("Tableau utilise: " + tableau_utilise);
         console.log("Limite reponse du tableau utilise: " + limite_reponse[tableau_utilise]);
@@ -88,6 +88,11 @@ function printHist()
         
 }
 
+function printBouton(value, lien, bouton)
+{
+        var node = document.getElementById(bouton);
+        node.innerHTML = "<FORM> <INPUT TYPE=button VALUE=\"" + value + "\" onClick=\"document.location.href=\'" + lien + "\'\";> </FORM>";
+}
 
 function controle()
 		{
@@ -118,21 +123,26 @@ function clic(jeux)
                         printEssais(affiche_essais);
                         p_m = "GAGN&Eacute;!!!";
                         essais += 1
-                if (jeux == "defi")
-                {
-                        printGagne();
-                        essais += 1
-                        gagne += 1
-                }
-                
-                if (jeux == "simple")
-                {
-                        printGagne();
-                        essais += 1
-                        gagne += 1
-                }
+                        if (jeux == "defi")
+                        {
+                                gagne += 1
+                                printGagne();
+                                reinit()
+                        }
+                        
+                        if (jeux == "simple")
+                        {
+                                printBouton("Partir", "index.html", "bouton1");
+                                printBouton("Rejouer", "jeux1.html", "bouton2");
+                        }
                    
 		}
                 printHist();
 	}
 
+function reinit()
+{console.log("je rentre");
+        choixQst()
+        printQst()
+        
+}
