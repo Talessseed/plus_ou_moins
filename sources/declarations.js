@@ -59,7 +59,7 @@ function init()
 function printQst()
 { 
         var node = document.getElementById("question");
-        node.innerHTML = "<strong>"+textequestions[tableau_utilise]+"</strong>" + "<br>En " + unitequestions[tableau_utilise];
+        node.innerHTML = "<strong>"+textequestions[tableau_utilise]+"</strong>" + "<br>En " + unitequestions[tableau_utilise] +":";
         random(limite_reponse[tableau_utilise])
         console.log("Tableau utilise: " + tableau_utilise);
         console.log("Limite reponse du tableau utilise: " + limite_reponse[tableau_utilise]);
