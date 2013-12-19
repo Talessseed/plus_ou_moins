@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
+	<br>
+	
 	<title>Plus ou moins</title>
 	<body bgcolor="#D2F2C9">
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -20,7 +22,7 @@
         <title>Plus ou moins</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <!-- en-tete du document -->
-	<center> <b> PLUS OU MOINS </b></center>
+	<center><img src="images/titre.png" border=0  width=300 height=70 alt="Retour au menu"></center>
 	<br>
 	<script type="text/javascript" src="declarations.js"></script>
 	<script type="text/javascript">
@@ -30,28 +32,19 @@
 </head>
 	<body>
 		<!-- corps du document -->
-		Donnez votre proposition dans la barre de texte ci-
-		dessous.
-		
 		<div id="question"></div> <form NAME="form1" onSubmit="clic('simple'); return false;">
 		<input TYPE="text" NAME="input" VALUE="">
 		<input type="button" name="bouton" value="OK" size=5 onClick=clic()>
 		</form>
-		<br>   <script type="text/javascript">
+		<script type="text/javascript">
 		choixQst(); //choix question
 		printQst(); //print question
 		</script>
 		
-		<FORM>
-		<INPUT
-		TYPE=button
-		VALUE="Retour au menu"
-		onClick="document.location.href='index.html'";>
-		</FORM>
+		<a href="index.html"><img src="images/retour_au_menu.png" border=0  width=170 height=55 alt="Retour au menu"></a> 		
 		
 		<div id="texte"></div>
-		<div id="bouton1"></div>
-		<div id="bouton2"></div>
+		<div id="bouton"></div>
 		<div id="essais"></div>
 		<div id="hist"></div>
 		

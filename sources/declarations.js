@@ -17,7 +17,7 @@ textereponse[2]= "Une tortue des Galapgos a une dur&eacute;e de vie moyenne de 1
 
 textequestions[3]= "Je suis un gu&eacute;pard, quel est ma vitesse sur terre ? ";
 unitequestions[3]=" km/h";
-limite_reponse[3]= 350;
+limite_reponse[3]= 100;
 textereponse[3]= "Un gu&eacute;pard coure &agrave; une vitesse moyenne de 350 km/h.";
 
 textequestions[4]= "Je suis un aigle royal, quelle est mon envergure ? ";
@@ -30,6 +30,15 @@ unitequestions[5]=" secondes";
 limite_reponse[5]= 100;
 textereponse[5]= "Un ours polaire, peut rester &agrave; une moyenne de 1 min 40 sous l'eau.";
 
+textequestions[6]= "Je suis un l&eacute;zard qui s'est fait couper la queue, en combien de temps peut-elle repousser ?";
+unitequestions[6]=" jours";
+limite_reponse[6]= 35;
+textereponse[6]= "La queue d'un l&eacute;zard repousse en 35 jours environ.";
+
+textequestions[7]= "Je suis un loup, combien de loups y a t-il dans ma meute ?";
+unitequestions[7]=" loups";
+limite_reponse[7]= 10;
+textereponse[7]= "Le nombre de loups moyen dans une meute est 10.";
 
 function nb_aleatoire(min, max) // fonction de nombres random
 {
@@ -39,7 +48,7 @@ function nb_aleatoire(min, max) // fonction de nombres random
 
 function choixQst()
 {
-        tableau_utilise = nb_aleatoire(1, 5);
+        tableau_utilise = nb_aleatoire(1, 7);
 }
 
 function random(cible) // fonction de répartition des nombres
@@ -59,7 +68,8 @@ function init()
 function printQst()
 { 
         var node = document.getElementById("question");
-        node.innerHTML = "<strong>"+textequestions[tableau_utilise]+"</strong>" + "<br>En " + unitequestions[tableau_utilise] +":";
+        node.innerHTML = "Donnez votre proposition dans la barre de texte ci-dessous.<br>";
+	node.innerHTML += "<strong>"+textequestions[tableau_utilise]+"</strong>" + "<br>En " + unitequestions[tableau_utilise] +":";
         random(limite_reponse[tableau_utilise])
         console.log("Tableau utilise: " + tableau_utilise);
         console.log("Limite reponse du tableau utilise: " + limite_reponse[tableau_utilise]);
@@ -76,7 +86,7 @@ function printEssais(chaine)
 function printMsg(chaine)
 { 
         var node = document.getElementById("texte");
-        node.innerHTML ="Le nombre &agrave deviner est "+chaine;
+        node.innerHTML = chaine;
 }
 
 function printHist()
@@ -85,7 +95,6 @@ function printHist()
         var node = document.getElementById("hist");
         texte += "<br>" + "Essai " + affiche_essais + ": " + nombre_choisi + " - " + p_m;
         node.innerHTML ="Essais: "+texte;
-        
 }
 
 function printBouton(value, lien, bouton)
@@ -106,20 +115,20 @@ function clic(jeux)
                 affiche_essais = essais - 1
 		if (nombre_choisi < nb_correct)
                 {
-			printMsg(" plus grand.");
+			printMsg("Le nombre &agrave deviner est plus grand.");
                         printEssais(affiche_essais)
                         p_m = "plus grand";
                 }
 		if (nombre_choisi > nb_correct)
                 {
-			printMsg(" plus petit.");
+			printMsg("Le nombre &agrave deviner est plus petit.");
                         printEssais(affiche_essais)
                         p_m = "plus petit";
                 }
 		if (nombre_choisi == nb_correct)
                 {
                         essais -= 1
-			printMsg(nb_correct + ". Bravo !\nTu as devin&eacute; en " + essais + " coups." + "<br>" + textereponse[tableau_utilise]);
+			printMsg("Le nombre &agrave deviner est " + nb_correct + ". Bravo !\nTu as devin&eacute; en " + essais + " coups." + "<br>" + textereponse[tableau_utilise]);
                         printEssais(affiche_essais);
                         p_m = "GAGN&Eacute;!!!";
                         essais += 1
@@ -128,21 +137,31 @@ function clic(jeux)
                                 gagne += 1
                                 printGagne();
                                 reinit();
+				
                         }
                         
                         if (jeux == "simple")
                         {
-                                printBouton("Partir", "index.html", "bouton1");
-                                printBouton("Rejouer", "jeux1.html", "bouton2");
+                                printBouton("Rejouer", "jeux1.html", "bouton");
                         }
                    
 		}
                 printHist();
+		document.form1.input.value = "";
 	}
 
 function reinit()
-{console.log("je rentre");
+{
+	console.log("je rentre");
         choixQst()
         printQst()
         
 }
+
+	
+function printAttention(message)
+{
+	var node = document.getElementById("attention");
+	node.innerHTML = message;
+}
+	
