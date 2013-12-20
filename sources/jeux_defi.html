@@ -75,7 +75,7 @@
 	if (compte<61) { info_duree = '<span style="color:#F51D1D">'+info_duree+"</span>";}
 	document.getElementById("compt").innerHTML = info_duree;
  
-        if(compte == 0 || compte < 0)
+        if(compte <= 0)
 	{
 		compte = 0;
 		clearInterval(timer);
