@@ -53,7 +53,7 @@ function printHist()
 {
         affiche_essais = essais - 1
         var node = document.getElementById("hist");
-        texte += "<br>" + "Essai " + affiche_essais + ": " + nombre_choisi + " - " + p_m;
+        texte = "<br>" + "Essai " + affiche_essais + ": " + nombre_choisi + " - " + p_m + texte;
         node.innerHTML ="Essais: "+texte;
 }
 
@@ -81,20 +81,20 @@ function clic(jeux)
                 affiche_essais = essais - 1
 		if (nombre_choisi < nb_correct)
                 {
-			printMsg("Le nombre &agrave deviner est plus grand.");
+			printMsg("Le nombre &agrave deviner est <strong> plus grand que " + nombre_choisi + "</strong>.");
                         printEssais(affiche_essais)
                         p_m = "plus grand";
                 }
 		if (nombre_choisi > nb_correct)
                 {
-			printMsg("Le nombre &agrave deviner est plus petit.");
+			printMsg("Le nombre &agrave deviner est <strong> plus petit que " + nombre_choisi + "</strong>.");
                         printEssais(affiche_essais)
                         p_m = "plus petit";
                 }
 		if (nombre_choisi == nb_correct)
                 {
                         essais -= 1
-			printMsg("Le nombre &agrave deviner est " + nb_correct + ". Bravo !\nTu as devin&eacute; en " + essais + " coups." + "<br>" + textereponse[tableau_utilise]);
+			printMsg("<strong> Le nombre &agrave deviner est " + nb_correct + ". Bravo !\nTu as devin&eacute; en " + essais + " coups." + "<br>" + textereponse[tableau_utilise] + "</strong>");
                         printEssais(affiche_essais);
                         p_m = "GAGN&Eacute;!!!";
                         essais += 1

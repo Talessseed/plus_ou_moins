@@ -107,7 +107,7 @@ textereponse[20]= "Un cheval Shire a comme poids moyen 1 tonne.";
 textequestions[21]= "Je suis un renard polaire, &agrave quelle temp&eacute;rature en dessous de z&eacute;ro puis-je r&eacute;sister ?";
 unitequestions[21]=" &deg;C";
 limite_reponse[21]= -70;
-textereponse[21]= "Un renard polaire peut r&eacute;sister ˆ -60&deg;C en moyenne.";
+textereponse[21]= "Un renard polaire peut r&eacute;sister &agrave; -60&deg;C en moyenne.";
 
 textequestions[22]= "Je suis un manchot empereur, &agrave; quelle profondeur puis-je plonger en moyenne ?";
 unitequestions[22]=" m"
@@ -122,7 +122,7 @@ textereponse[23]= "La vitesse &agrave; quel peut nager un manchot papou en moyen
 textequestions[24]= "Je suis un panda g&eacute;ant, &agrave; quelle altitude vis-je ?";
 unitequestions[24]=" hm";
 limite_reponse[24]= 25;
-textereponse[24]= "Les pandas g&eacute;ant vivent dans les montagnes ˆ en moyenne 2500 m.";
+textereponse[24]= "Les pandas g&eacute;ant vivent dans les montagnes @agrave; en moyenne 2500 m.";
 
 textequestions[25]= "Je suis un panda g&eacute;ant, quel est mon poids ?";
 unitequestions[25]=" kg";
