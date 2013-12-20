@@ -46,14 +46,14 @@
 		var node = document.getElementById("formulaire");
 		node.innerHTML = "";
 	}
-	
+
 	function decompte()
 	{
         if(compte <= 1)
 	{
 		pluriel = "";
         }
-	
+
 	else
 	{
 		pluriel = "s";
@@ -69,20 +69,18 @@
 		node.style.display = "block";
 		printMsg("")
 		avis()
-        }
-	
-	info_duree = compte + " seconde" + pluriel;
-	if (compte<61) { info_duree = '<span style="color:#F51D1D">'+info_duree+"</span>";}
-	document.getElementById("compt").innerHTML = info_duree;
- 
-        if(compte <= 0)
-	{
 		compte = 0;
 		clearInterval(timer);
         }
- 
-		compte--;
+
+	info_duree = compte + " seconde" + pluriel;
+	if (compte<61) { info_duree = '<span style="color:#F51D1D">'+info_duree+"</span>";}
+	document.getElementById("compt").innerHTML = info_duree;
+	
+	compte--;
+	
 	}
+
 	var timer = setInterval('decompte()',1000);
 	</script>
 	<script type="text/javascript" src="tableaux.js"></script>
