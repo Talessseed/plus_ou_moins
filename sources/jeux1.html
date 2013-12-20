@@ -24,6 +24,7 @@
         <!-- en-tete du document -->
 	<center><img src="images/titre.png" border=0  width=300 height=70 alt="Retour au menu"></center>
 	<br>
+	<script type="text/javascript" src="tableaux.js"></script>
 	<script type="text/javascript" src="declarations.js"></script>
 	<script type="text/javascript">
 	var texte = "<br>"
@@ -33,7 +34,7 @@
 	<body>
 		<!-- corps du document -->
 		<div id="question"></div> <form NAME="form1" onSubmit="clic('simple'); return false;">
-		<input TYPE="text" NAME="input" VALUE="">
+		<input TYPE="text" NAME="input" VALUE="" autofocus required autocomplete="off">
 		<input type="button" name="bouton" value="OK" size=5 onClick=clic()>
 		</form>
 		<script type="text/javascript">
@@ -41,11 +42,12 @@
 		printQst(); //print question
 		</script>
 		
-		<a href="index.html"><img src="images/retour_au_menu.png" border=0  width=170 height=55 alt="Retour au menu"></a> 		
+				
 		
 		<div id="texte"></div>
-		<div id="bouton"></div>
 		<div id="essais"></div>
+		<div id="bouton"></div>
+		<a href="index.html"><img src="images/retour_au_menu.png" border=0  width=170 height=55 alt="Retour au menu"></a> 
 		<div id="hist"></div>
 		
 		<script type="text/javascript">

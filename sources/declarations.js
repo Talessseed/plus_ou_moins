@@ -1,45 +1,5 @@
 var essais = 0;
 
-textequestions = new Array();
-unitequestions = new Array();
-limite_reponse = new Array();
-textereponse = new Array()
-
-textequestions[1]= "Je suis un &eacute;lephant d'Afrique de la savanne, quel est mon poids ?";
-unitequestions[1]=" kilos";
-limite_reponse[1]= 6000;
-textereponse[1]= "Le poids moyen d'un &eacute;lephant d'Afrique de la savanne est 6 tonnes.";
-
-textequestions[2]= "Je suis une tortue des Galapgos et je viens de mourir, quel age ai-je ? ";
-unitequestions[2]=" ans";
-limite_reponse[2]= 175;
-textereponse[2]= "Une tortue des Galapgos a une dur&eacute;e de vie moyenne de 175 ans.";
-
-textequestions[3]= "Je suis un gu&eacute;pard, quel est ma vitesse sur terre ? ";
-unitequestions[3]=" km/h";
-limite_reponse[3]= 100;
-textereponse[3]= "Un gu&eacute;pard coure &agrave; une vitesse moyenne de 350 km/h.";
-
-textequestions[4]= "Je suis un aigle royal, quelle est mon envergure ? ";
-unitequestions[4]=" cms";
-limite_reponse[4]= 200;
-textereponse[4]= "L'envergure moyenne d'un aigle royal est de 2m.";
-
-textequestions[5]= "Je suis un ours polaire, combien de temps puis-je rester sous l'eau  ? ";
-unitequestions[5]=" secondes";
-limite_reponse[5]= 100;
-textereponse[5]= "Un ours polaire, peut rester &agrave; une moyenne de 1 min 40 sous l'eau.";
-
-textequestions[6]= "Je suis un l&eacute;zard qui s'est fait couper la queue, en combien de temps peut-elle repousser ?";
-unitequestions[6]=" jours";
-limite_reponse[6]= 35;
-textereponse[6]= "La queue d'un l&eacute;zard repousse en 35 jours environ.";
-
-textequestions[7]= "Je suis un loup, combien de loups y a t-il dans ma meute ?";
-unitequestions[7]=" loups";
-limite_reponse[7]= 10;
-textereponse[7]= "Le nombre de loups moyen dans une meute est 10.";
-
 function nb_aleatoire(min, max) // fonction de nombres random
 {
         var nb = min + (max-min+1)*Math.random();
@@ -48,7 +8,7 @@ function nb_aleatoire(min, max) // fonction de nombres random
 
 function choixQst()
 {
-        tableau_utilise = nb_aleatoire(1, 7);
+        tableau_utilise = nb_aleatoire(1, 28);
 }
 
 function random(cible) // fonction de répartition des nombres
@@ -103,6 +63,12 @@ function printBouton(value, lien, bouton)
         node.innerHTML = "<FORM> <INPUT TYPE=button VALUE=\"" + value + "\" onClick=\"document.location.href=\'" + lien + "\'\";> </FORM>";
 }
 
+function printImg(id, image, lien, width, height, texte)
+{
+        var node = document.getElementById(id);
+        node.innerHTML = "<a href=\"" + lien + "\"><img src=\"" + image + "\" border=0  width=" + width + " height=" + height + " alt=\"" + texte +  "\"></a>";
+}
+
 function controle()
 		{
 			nombre_choisi = document.form1.input.value;
@@ -142,7 +108,7 @@ function clic(jeux)
                         
                         if (jeux == "simple")
                         {
-                                printBouton("Rejouer", "jeux1.html", "bouton");
+                                printImg("bouton", "images/rejouer.png", "jeux1.html", "170", "55", "rejouer");
                         }
                    
 		}

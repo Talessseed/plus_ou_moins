@@ -25,7 +25,7 @@
 	<br>
 	
 	<script language="javascript" type="text/javascript">
-	var compte = 10;
+	var compte = 180;
 	
 	function printGagne()
 	{
@@ -57,7 +57,7 @@
 	if(compte <= 0)
 	{
 		clearFormulaire();
-                printBouton("Rejouer", "jeux_defi.html", "bouton");
+                printImg("bouton", "images/rejouer.png", "jeux_defi.html", "170", "55", "rejouer");
 		var node = document.getElementById("question");
 		node.innerHTML = textereponse[tableau_utilise];
 		node = document.getElementById("gameover");
@@ -77,7 +77,7 @@
 		}
 		if (gagne == 3)
 		{
-			printAttention("<strong> Félicitations ! </strong>");
+			printAttention("<strong> F&eacute;licitations ! </strong>");
 		}
 		if (gagne == 4)
 		{
@@ -89,7 +89,7 @@
 		}
 		if (gagne == 6)
 		{
-			printAttention("<strong> Vous avez joué combien de fois pour arrivé &agrave faire &ccedil;a </strong>");
+			printAttention("<strong> Vous avez joué combien de fois pour arriver &agrave faire &ccedil;a </strong>");
 		}
 		if (gagne == 7)
 		{
@@ -131,6 +131,7 @@
 	}
 	var timer = setInterval('decompte()',1000);
 	</script>
+	<script type="text/javascript" src="tableaux.js"></script>
 	<script type="text/javascript" src="declarations.js"></script>
 	<script type="text/javascript">
 	
@@ -171,8 +172,8 @@
 		<div id="compt"></div>
 		<div id="texte"></div>
 		<div id="gagne"></div>
-		<div id="bouton"></div>
 		<div id="essais"></div>
+		<div id="bouton"></div>
 		<a href="index.html"><img src="images/retour_au_menu.png" border=0  width=170 height=55 alt="Retour au menu"></a>
 		<div id="hist"></div>
 		
