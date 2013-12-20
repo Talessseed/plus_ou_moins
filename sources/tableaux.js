@@ -143,3 +143,54 @@ textequestions[28]= "Je suis un renard polaire, quelle est ma hauteur ?";
 unitequestions[28]=" cm";
 limite_reponse[28]= 80;
 textereponse[28]= "La hauteur d'un renard polaire est en moyenne 80 cm.";
+
+function avis()
+{
+    if (gagne == 0)
+    {
+	printAttention("<strong> Vous &ecirc;tes d&eacute;plorable... </strong>");
+    }
+    if (gagne == 1)
+    {
+	printAttention("<strong> Vous n'&ecirc;tes pas tr&egrave;s fort... </strong>");
+    }
+    if (gagne == 2)
+    {
+	printAttention("<strong> Bravo ! </strong>");
+    }
+    if (gagne == 3)
+    {
+	printAttention("<strong> Superbe ! </strong>");
+    }
+    if (gagne == 4)
+    {
+	printAttention("<strong> F&eacute;licitations ! </strong>");
+    }
+    if (gagne == 5)
+    {
+	printAttention("<strong> Vous &ecirc;tes rapide ! </strong>");
+    }
+    if (gagne == 6)
+    {
+	printAttention("<strong> Vous &ecirc;tes tr&egrave;s rapide ! </strong>");
+    }
+    if (gagne == 7)
+    {
+	printAttention("<strong> Vous avez joué combien de fois pour arriver &agrave faire &ccedil;a ! </strong>");
+    }
+		
+    if (gagne == 8)
+    {
+	printAttention("<strong> Vous &ecirc;tes un demi-dieu ! </strong>");
+    }
+		
+    if (gagne == 9)
+    {
+	printAttention("<strong> Vous &ecirc;tes un dieu ! </strong>");
+    }
+		
+    if (gagne >= 10)
+    {
+	printAttention("<strong> Vous allez faire crasher le jeu si vous continuez ! </strong>");
+    }
+}

@@ -54,6 +54,11 @@
 		pluriel = "";
         }
 	
+	else
+	{
+		pluriel = "s";
+        }
+	
 	if(compte <= 0)
 	{
 		clearFormulaire();
@@ -63,60 +68,9 @@
 		node = document.getElementById("gameover");
 		node.style.display = "block";
 		printMsg("")
-		if (gagne == 0)
-		{
-			printAttention("<strong> Vous &ecirc;tes d&eacute;plorable... </strong>");
-		}
-		if (gagne == 1)
-		{
-			printAttention("<strong> Vous n'&ecirc;tes pas tr&egrave;s fort... </strong>");
-		}
-		if (gagne == 2)
-		{
-			printAttention("<strong> Bravo ! </strong>");
-		}
-		if (gagne == 3)
-		{
-			printAttention("<strong> F&eacute;licitations ! </strong>");
-		}
-		if (gagne == 4)
-		{
-			printAttention("<strong> Vous devez un accro pour arriver &agrave; &ccedil;a !!! </strong>");
-		}
-		if (gagne == 5)
-		{
-			printAttention("<strong> Vous &ecirc;tes hyper rapide ! </strong>");
-		}
-		if (gagne == 6)
-		{
-			printAttention("<strong> Vous avez joué combien de fois pour arriver &agrave faire &ccedil;a </strong>");
-		}
-		if (gagne == 7)
-		{
-			printAttention("<strong> Vous &ecirc;tes un demi-dieu ! </strong>");
-		}
-		
-		if (gagne == 8)
-		{
-			printAttention("<strong> Vous &ecirc;tes un dieu ! </strong>");
-		}
-		
-		if (gagne == 9)
-		{
-			printAttention("<strong> Vous &ecirc;tes un dieu de dieu ! </strong>");
-		}
-		
-		if (gagne >= 10)
-		{
-			printAttention("<strong> Vous allez faire crasher le jeu si vous continuez ! </strong>");
-		}
-		
+		avis()
         }
 	
-	else
-	{
-		pluriel = "s";
-        }
 	info_duree = compte + " seconde" + pluriel;
 	if (compte<61) { info_duree = '<span style="color:#F51D1D">'+info_duree+"</span>";}
 	document.getElementById("compt").innerHTML = info_duree;
