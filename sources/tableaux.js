@@ -16,7 +16,7 @@ textereponse[2]= "Une tortue des Galapgos a une dur&eacute;e de vie moyenne de 1
 textequestions[3]= "Je suis un gu&eacute;pard, quel est ma vitesse sur terre ? ";
 unitequestions[3]=" km/h";
 limite_reponse[3]= 100;
-textereponse[3]= "Un gu&eacute;pard cours &agrave; une vitesse moyenne de 350 km/h.";
+textereponse[3]= "Un gu&eacute;pard cours &agrave; une vitesse moyenne de 100 km/h.";
 
 textequestions[4]= "Je suis un aigle royal, quelle est mon envergure ? ";
 unitequestions[4]=" cms";
